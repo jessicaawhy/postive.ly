@@ -5,6 +5,8 @@ const StyledNavBar = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  border: 1px solid black;
+
   h1 {
     font-size: 35px;
     padding-left: 15px;

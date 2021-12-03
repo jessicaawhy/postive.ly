@@ -56,9 +56,17 @@ const GlobalStyle = createGlobalStyle`
     color: rgb(40, 40, 40);
   }
 
-  body {
-    margin: 20px;
-    padding: 10px;
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    > * {
+      margin: 20px;
+      width: 100%;
+      max-width: 1400px;
+    }
   }
 `;
 
