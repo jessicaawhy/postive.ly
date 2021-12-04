@@ -7,6 +7,21 @@ const List = () => {
     'Went to the beach and saw the sunset!',
     'Coffee art on point this morning',
     'Got an interview response today!!!',
+    'Went to the beach and saw the sunset!',
+    'Coffee art on point this morning',
+    'Got an interview response today!!!',
+    'Went to the beach and saw the sunset!',
+    'Coffee art on point this morning',
+    'Got an interview response today!!!',
+    'Went to the beach and saw the sunset!',
+    'Coffee art on point this morning',
+    'Got an interview response today!!!',
+    'Went to the beach and saw the sunset!',
+    'Coffee art on point this morning',
+    'Got an interview response today!!!',
+    'Went to the beach and saw the sunset!',
+    'Coffee art on point this morning',
+    'Got an interview response today!!!',
   ];
 
   return (

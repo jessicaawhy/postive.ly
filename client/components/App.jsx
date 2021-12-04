@@ -4,7 +4,7 @@ import Main from './Main';
 import GlobalStyle from './reusable-styles/GlobalStyle.styled';
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('jess');
   const [form, setForm] = useState(null);
 
   return (

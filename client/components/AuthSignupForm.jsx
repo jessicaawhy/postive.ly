@@ -9,7 +9,7 @@ const AuthSignupForm = ({ form, setForm }) => {
   };
 
   return (
-    <StyledForm autoComplete="off">
+    <StyledForm onSubmit={handleSubmit} autoComplete="off">
       <h2>Sign up</h2>
       <label htmlFor="username">
         Username

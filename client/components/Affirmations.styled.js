@@ -29,10 +29,11 @@ const StyledContainer = styled.div`
 
   textarea {
     width: 85%;
-    height: 25px;
+    height: 50px;
     font-size: 15px;
     resize: none;
-    padding: 10px;
+    padding: 5px;
+    vertical-align: center;
 
     &:focus {
       outline: none;

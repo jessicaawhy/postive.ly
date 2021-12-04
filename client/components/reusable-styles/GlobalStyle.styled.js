@@ -61,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     color: var(--black);
-    overflow: none;
   }
 
   html {
@@ -78,6 +77,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 
     > * {
       width: 100%;

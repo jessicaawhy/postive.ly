@@ -10,6 +10,7 @@ const StyledContainer = styled.div`
   min-width: 400px;
   margin: 20px;
   padding: 20px;
+  height: 50%;
 
   > * {
     margin: 15px 0;

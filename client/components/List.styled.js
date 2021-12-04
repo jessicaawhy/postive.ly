@@ -5,7 +5,8 @@ const StyledList = styled.ul`
   overflow: auto;
 
   li {
-    padding: 30px;
+    margin: 0 30px;
+    padding: 20px 10px;
 
     &:not(:last-of-type) {
       border-bottom: 1px solid rgb(200, 200, 200);
