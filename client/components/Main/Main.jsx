@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledMain from './Main.styled';
-import AuthLoginForm from './AuthLoginForm';
-import AuthSignupForm from './AuthSignupForm';
-import GratNewForm from './GratNewForm';
-import GratShareForm from './GratShareForm';
-import About from './About';
-import UserPage from './UserPage';
+import AuthLoginForm from '../AuthForms/AuthLoginForm';
+import AuthSignupForm from '../AuthForms/AuthSignupForm';
+import GratNewForm from '../GratForms/GratNewForm';
+import GratShareForm from '../GratForms/GratShareForm';
+import About from '../About/About';
+import UserPage from '../UserPage/UserPage';
 
 const Main = ({
   user, form, setUser, setForm,
@@ -21,11 +21,11 @@ const Main = ({
       return <GratShareForm setForm={setForm} />;
     }
 
-    if (!user) {
-      return <About />;
+    if (user) {
+      return <UserPage user={user} setForm={setForm} />;
     }
 
-    return <UserPage user={user} setForm={setForm} />;
+    return <About />;
   };
 
   return (

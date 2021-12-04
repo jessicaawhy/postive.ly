@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  border: 2px dashed rgb(200, 200, 200);
+  border: 2px dashed var(--grey);
   border-radius: 10px;
   display: flex;
   flex-direction: column;

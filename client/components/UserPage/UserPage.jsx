@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import StyledUserPage from './UserPage.styled';
-import Affirmations from './Affirmations';
-import Gratitudes from './Gratitudes';
+import Affirmations from '../Affirmations/Affirmations';
+import Gratitudes from '../Gratitudes/Gratitudes';
 
 const UserPage = ({ user, setForm }) => (
   <StyledUserPage>

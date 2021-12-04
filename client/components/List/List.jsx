@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import StyledList from './List.styled';
-import Button from './reusable-styles/Button.styled';
 
 const List = () => {
   const gratitudes = [

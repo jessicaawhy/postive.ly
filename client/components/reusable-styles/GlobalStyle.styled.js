@@ -53,7 +53,9 @@ const GlobalStyle = createGlobalStyle`
   /* App Styles Below */
 
   :root {
-    --black: rgb(40, 40, 40)
+    --black: rgb(40, 40, 40);
+    --yellow: rgb(255, 219, 61);
+    --grey: rgb(200, 200, 200);
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&display=swap');
@@ -73,7 +75,6 @@ const GlobalStyle = createGlobalStyle`
 
   #root {
     height: 100vh;
-    // padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 
     > * {
       width: 100%;
-      max-width: 1400px;
+      // max-width: 1400px;
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledNavBar from './Navbar.styled';
-import Button from './reusable-styles/Button.styled';
+import Button from '../reusable-styles/Button.styled';
 
 const Navbar = ({ user, setForm, setUser }) => {
   const handleLogout = () => {
@@ -19,12 +19,12 @@ const Navbar = ({ user, setForm, setUser }) => {
           user === null
             ? (
               <>
-                <Button onClick={() => setForm('login')}>LOG IN</Button>
-                <Button onClick={() => setForm('signup')} color={{ r: 255, g: 219, b: 61 }}>SIGN UP</Button>
+                <Button onClick={() => setForm('login')} border="white" color="white">LOG IN</Button>
+                <Button onClick={() => setForm('signup')}>SIGN UP</Button>
               </>
             )
             : (
-              <Button onClick={handleLogout} color={{ r: 255, g: 219, b: 61 }}>LOG OUT</Button>
+              <Button onClick={handleLogout} color="white">LOG OUT</Button>
             )
         }
       </div>

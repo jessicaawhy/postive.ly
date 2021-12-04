@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import StyledContainer from './Affirmations.styled';
 
 const Affirmations = () => {
   const [saved, setSaved] = useState(true);
   const [affirmation, setAffirmation] = useState('YOU ARE AWESOME!');
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     setSaved(false);
   };
 

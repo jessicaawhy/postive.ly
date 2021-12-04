@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
-import Main from './Main';
+import React, { useState } from 'react';
+import Navbar from './Navbar/Navbar';
+import Main from './Main/Main';
 import GlobalStyle from './reusable-styles/GlobalStyle.styled';
 
 const App = () => {
-  const [user, setUser] = useState('jess');
+  const [user, setUser] = useState(null);
   const [form, setForm] = useState(null);
 
   return (

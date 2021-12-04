@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  --bg: ${({ color }) => (color ? `rgb(${color.r}, ${color.g}, ${color.b})` : 'rgb(255, 255, 255)')};
-  background-color: var(--bg);
-  border: 1px solid var(--bg);
+  background-color: ${({ color }) => (color || 'var(--yellow)')};
+  border: 1px solid ${({ border }) => (border || 'var(--yellow)')};
   border-radius: 20px;
   padding: 10px 15px;
   font-size: 15px;
@@ -12,6 +11,12 @@ const Button = styled.button`
 
   &:active {
     transform: translateY(3px);
+  }
+
+  &:hover {
+    background-color: rgb(255, 237, 158);
+    border: 1px solid rgb(255, 237, 158);
+    text-decoration: underline;
   }
 `;
 
