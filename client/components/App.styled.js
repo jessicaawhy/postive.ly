@@ -63,14 +63,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    padding: 20px;
+    // padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
 
     > * {
-      margin: 20px;
       width: 100%;
       max-width: 1400px;
     }

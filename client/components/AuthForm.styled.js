@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledForm = styled.form`
-  border: 1px solid var(--black);
+  border: 2px dashed var(--black);
   border-radius: 10px;
 
   display: flex;
