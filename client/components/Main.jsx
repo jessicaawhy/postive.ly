@@ -1,12 +1,28 @@
 import React from 'react';
 import StyledMain from './Main.styled';
+import AuthLoginForm from './AuthLoginForm';
+import AuthSignupForm from './AuthSignupForm';
 
-const Main = ({ form }) => (
-  <StyledMain>
-    {
-      form ? `form: ${form}` : <div>main page contents</div>
+const Main = ({ user, form }) => {
+  const display = () => {
+    if (form === 'login') {
+      return <AuthLoginForm />;
+    } if (form === 'signup') {
+      return <AuthSignupForm />;
     }
-  </StyledMain>
-);
+
+    if (!user) {
+      return <div>main page contents</div>;
+    }
+
+    return <div>user page contents</div>;
+  };
+
+  return (
+    <StyledMain>
+      {display()}
+    </StyledMain>
+  );
+};
 
 export default Main;

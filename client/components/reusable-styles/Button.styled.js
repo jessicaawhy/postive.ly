@@ -8,6 +8,11 @@ const Button = styled.button`
   padding: 10px 15px;
   font-size: 15px;
   text-decoration: none;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(3px);
+  }
 `;
 
 export default Button;
