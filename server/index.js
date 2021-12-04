@@ -1,6 +1,3 @@
-const express = require('express');
+const app = require('./app');
 
-const app = express();
-
-app.use(express.static('public'));
 app.listen(3000, () => console.log('now listening on port 3000'));
