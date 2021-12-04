@@ -58,28 +58,26 @@ const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&display=swap');
   * {
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     color: var(--black);
+    overflow: none;
   }
 
   html {
-    height: 100%;
-    max-height: 100vh;
+    height: 100vh;
   }
 
   body {
-    height: 100%;
+    height: 100vh;
   }
 
   #root {
+    height: 100vh;
     // padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // height: 100vh;
-    // max-height: 100vh;
-    overflow: auto;
-
 
     > * {
       width: 100%;

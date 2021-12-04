@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Main from './Main';
-import GlobalStyle from './App.styled';
+import GlobalStyle from './reusable-styles/GlobalStyle.styled';
 
 const App = () => {
   const [user, setUser] = useState(null);

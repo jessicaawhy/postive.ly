@@ -9,7 +9,7 @@ const Navbar = ({ user, setForm, setUser }) => (
       <h1>positive.ly</h1>
     </div>
 
-    <div>
+    <div className="btn-container">
       {
         user === null
           ? (

@@ -6,16 +6,10 @@ const StyledUserPage = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
 
   h2 {
-    margin: 10px;
+    margin: 30px;
     font-size: 30px;
-  }
-
-  h3 {
-    margin: 10px;
-    font-size: 25px;
   }
 `;
 
