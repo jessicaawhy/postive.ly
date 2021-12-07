@@ -54,7 +54,8 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --black: rgb(40, 40, 40);
-    --yellow: rgb(255, 219, 61);
+    --yellow: rgb(255, 227, 105);
+    --light-yellow: rgb(255, 237, 158);
     --grey: rgb(200, 200, 200);
   }
 

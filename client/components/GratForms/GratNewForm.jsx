@@ -2,9 +2,12 @@ import React from 'react';
 import StyledForm from './GratForm.styled';
 import Button from '../reusable-styles/Button.styled';
 
-const NewForm = ({ setForm }) => {
+const NewForm = ({ gratitudes, setGratitudes, setForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setGratitudes([e.target.gratitude.value, ...gratitudes]);
+
     setForm(null);
   };
 

@@ -24,13 +24,15 @@ const StyledContainer = styled.div`
   }
 
   p {
-    font-size: 15px;
+
+    line-height: 1.5;
+    width: 85%;
   }
 
   textarea {
+    font-size: 16px;
     width: 85%;
-    height: 50px;
-    font-size: 15px;
+    height: 75px;
     resize: none;
     padding: 5px;
     vertical-align: center;

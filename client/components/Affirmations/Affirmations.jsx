@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import StyledContainer from './Affirmations.styled';
 
-const Affirmations = () => {
+const Affirmations = ({ affirmation, setAffirmation }) => {
   const [saved, setSaved] = useState(true);
-  const [affirmation, setAffirmation] = useState('YOU ARE AWESOME!');
 
   const handleClick = () => {
     setSaved(false);
   };
 
   const saveAffirmation = (e) => {
-    setAffirmation(e.target.value || 'You are the best!');
+    setAffirmation(e.target.value || 'Repeating positive affirmations will give power to the phrase, since hearing something often makes it more likely you\'ll believe it. Alter your subconcious thoughts and add an affirmation!');
     setSaved(true);
   };
 

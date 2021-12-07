@@ -4,11 +4,20 @@ import StyledUserPage from './UserPage.styled';
 import Affirmations from '../Affirmations/Affirmations';
 import Gratitudes from '../Gratitudes/Gratitudes';
 
-const UserPage = ({ user, setForm }) => (
+const UserPage = ({
+  user, gratitudes, setForm, setGratitudes, affirmation, setAffirmation,
+}) => (
   <StyledUserPage>
     <h2>Hello, {user}!</h2>
-    <Affirmations />
-    <Gratitudes setForm={setForm} />
+    <Affirmations
+      affirmation={affirmation}
+      setAffirmation={setAffirmation}
+    />
+    <Gratitudes
+      setForm={setForm}
+      gratitudes={gratitudes}
+      setGratitudes={setGratitudes}
+    />
   </StyledUserPage>
 );
 

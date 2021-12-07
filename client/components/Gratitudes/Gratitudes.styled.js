@@ -1,16 +1,18 @@
 import styled from 'styled-components';
+import Button from '../reusable-styles/Button.styled';
 
 const StyledContainer = styled.div`
   border: 2px dashed var(--grey);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 50%;
   min-width: 400px;
   margin: 20px;
   padding: 20px;
-  height: 50%;
+  height: 500px;
 
   > * {
     margin: 15px 0;
@@ -26,6 +28,14 @@ const StyledContainer = styled.div`
 
     button:not(:last-of-type) {
       margin-right: 10px;
+    }
+
+    ${Button} {
+      &:hover {
+      span {
+          color: rgb(201, 48, 48);
+        }
+      }
     }
   }
 `;

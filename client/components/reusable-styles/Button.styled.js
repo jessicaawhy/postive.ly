@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: ${({ color }) => (color || 'var(--yellow)')};
-  border: 1px solid ${({ border }) => (border || 'var(--yellow)')};
+  background-color: ${({ color }) => (color || 'var(--light-yellow)')};
+  border: 2px solid ${({ border }) => (border || 'var(--light-yellow)')};
   border-radius: 20px;
   padding: 10px 15px;
   font-size: 15px;
@@ -14,9 +14,8 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: rgb(255, 237, 158);
-    border: 1px solid rgb(255, 237, 158);
-    text-decoration: underline;
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow);
   }
 `;
 

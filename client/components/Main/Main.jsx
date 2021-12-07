@@ -8,7 +8,7 @@ import About from '../About/About';
 import UserPage from '../UserPage/UserPage';
 
 const Main = ({
-  user, form, setUser, setForm,
+  user, gratitudes, form, setUser, setGratitudes, setForm, affirmation, setAffirmation,
 }) => {
   const display = () => {
     if (form === 'login') {
@@ -16,13 +16,28 @@ const Main = ({
     } if (form === 'signup') {
       return <AuthSignupForm setForm={setForm} />;
     } if (form === 'new') {
-      return <GratNewForm setForm={setForm} />;
+      return (
+        <GratNewForm
+          setForm={setForm}
+          gratitudes={gratitudes}
+          setGratitudes={setGratitudes}
+        />
+      );
     } if (form === 'share') {
       return <GratShareForm setForm={setForm} />;
     }
 
     if (user) {
-      return <UserPage user={user} setForm={setForm} />;
+      return (
+        <UserPage
+          user={user}
+          gratitudes={gratitudes}
+          setGratitudes={setGratitudes}
+          setForm={setForm}
+          affirmation={affirmation}
+          setAffirmation={setAffirmation}
+        />
+      );
     }
 
     return <About />;
