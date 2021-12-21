@@ -59,10 +59,11 @@ const GlobalStyle = createGlobalStyle`
     --grey: rgb(200, 200, 200);
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
   * {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--black);
   }
 
