@@ -16,7 +16,7 @@ const Navbar = ({ user, setForm, setUser }) => {
       </div>
       <div className="btn-container">
         {
-          user === null
+          user === undefined
             ? (
               <>
                 <Button onClick={() => setForm('login')} border="white" color="white">LOG IN</Button>

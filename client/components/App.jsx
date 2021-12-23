@@ -1,44 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+import GlobalStyle from './reusable-styles/GlobalStyle.styled';
+import StyledMain from './App.styled';
+
 import Navbar from './Navbar/Navbar';
 import Main from './Main/Main';
-import GlobalStyle from './reusable-styles/GlobalStyle.styled';
+import AuthLoginForm from './AuthForms/AuthLoginForm';
+import AuthSignupForm from './AuthForms/AuthSignupForm';
+import UserPage from './UserPage/UserPage';
 
-const App = () => {
-  const [user, setUser] = useState(null);
-  const [form, setForm] = useState(null);
-  const [gratitudes, setGratitudes] = useState(null);
-  const [affirmation, setAffirmation] = useState('Repeating positive affirmations will give power to the phrase, since hearing something often makes it more likely you\'ll believe it. Alter your subconcious thoughts and add an affirmation!');
-
-  useEffect(() => {
-    if (user !== null) {
-      fetch('api/user/jess')
-        .then((response) => response.json())
-        .then((data) => setGratitudes(data.gratitudes));
-    }
-  }, [user]);
-
-  return (
-    <>
-      <GlobalStyle />
-      <Navbar
-        user={user}
-        setForm={setForm}
-        setUser={setUser}
-        affirmation={affirmation}
-        setAffirmation={setAffirmation}
-      />
-      <Main
-        user={user}
-        setUser={setUser}
-        gratitudes={gratitudes}
-        setGratitudes={setGratitudes}
-        form={form}
-        setForm={setForm}
-        affirmation={affirmation}
-        setAffirmation={setAffirmation}
-      />
-    </>
-  );
-};
+const App = () => (
+  <>
+    <GlobalStyle />
+    <Navbar />
+    <StyledMain>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          <Route path="/signup" element={<AuthSignupForm />} />
+          <Route path="/login" element={<AuthLoginForm />} />
+          <Route path="/home" element={<UserPage />} />
+        </Routes>
+      </Router>
+    </StyledMain>
+  </>
+);
 
 export default App;

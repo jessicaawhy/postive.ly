@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '../reusable-styles/Button.styled';
+import Button from '../../reusable-styles/Button.styled';
 
 const StyledContainer = styled.div`
   border: 2px dashed var(--grey);
@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   min-width: 400px;
   margin: 20px;
   padding: 20px;
-  height: 500px;
+  height: 100%;
 
   > * {
     margin: 15px 0;

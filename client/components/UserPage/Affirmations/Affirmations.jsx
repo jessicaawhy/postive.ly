@@ -18,7 +18,7 @@ const Affirmations = ({ affirmation, setAffirmation }) => {
       <h3>Affirmations</h3>
       {
         saved === true
-          ? <p onClick={handleClick} id="affirmation">{affirmation}</p>
+          ? <p onClick={handleClick} id="affirmation">hi</p>
           : (
             <textarea
               id="input"
