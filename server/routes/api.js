@@ -5,13 +5,13 @@ const router = express.Router();
 
 router.get('/user/:username', async (req, res) => {
   try {
-    const result = await User.find({ username: req.params.username });
+    const user = await User.findOne({ username: req.params.username });
 
-    if (!result.length) {
+    if (!user) {
       throw new Error('No such user');
     }
 
-    res.send(result);
+    res.send(user);
   } catch (err) {
     console.log('Error: ', err);
     res.sendStatus(404);
@@ -19,8 +19,8 @@ router.get('/user/:username', async (req, res) => {
 });
 
 router.post('/user', async (req, res) => {
-  const { username } = req.body;
   try {
+    const { username } = req.body;
     const result = await User.find({ username });
 
     if (result.length > 0) {
@@ -28,6 +28,8 @@ router.post('/user', async (req, res) => {
     }
 
     const user = new User({ username });
+
+    user.affirmation = 'Repeating positive affirmations will give power to the phrase, since hearing something often makes it more likely you\'ll believe it. Alter your subconcious thoughts and add an affirmation!';
 
     user.gratitudes.push('postive.ly - Your new happy appy.');
     user.gratitudes.push('grat·​i·​tude: A feeling of appreciation or thanks');
@@ -44,8 +46,43 @@ router.post('/user', async (req, res) => {
   }
 });
 
-router.put('/user/:username/gratitudes', (req, res) => {
-  // update user messages w/ new message
+router.post('/user/:username/gratitudes', async (req, res) => {
+  try {
+    const { username } = req.params;
+    const { gratitude } = req.body;
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      throw new Error('No such user');
+    }
+
+    user.gratitudes.push(gratitude);
+
+    await user.save();
+    res.send(201);
+  } catch (err) {
+    console.log('Error: ', err);
+    res.sendStatus(404);
+  }
+});
+
+router.delete('/user/:username/gratitudes/:id', async (req, res) => {
+  try {
+    const { username, id } = req.params;
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      throw new Error('No such user');
+    }
+
+    user.gratitudes.splice(id, 1);
+
+    await user.save();
+    res.send(201);
+  } catch (err) {
+    console.log('Error: ', err);
+    res.sendStatus(404);
+  }
 });
 
 router.put('/user/:username/affirmation', (req, res) => {
