@@ -78,15 +78,31 @@ router.delete('/user/:username/gratitudes/:id', async (req, res) => {
     user.gratitudes.splice(id, 1);
 
     await user.save();
-    res.send(201);
+    res.send(200);
   } catch (err) {
     console.log('Error: ', err);
     res.sendStatus(404);
   }
 });
 
-router.put('/user/:username/affirmation', (req, res) => {
-  // update user affirmation
+router.put('/user/:username/affirmation', async (req, res) => {
+  try {
+    const { username } = req.params;
+    const { affirmation } = req.body;
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      throw new Error('No such user');
+    }
+
+    user.affirmation = affirmation || 'Repeating positive affirmations will give power to the phrase, since hearing something often makes it more likely you\'ll believe it. Alter your subconcious thoughts and add an affirmation!';
+
+    await user.save();
+    res.send(204);
+  } catch (err) {
+    console.log('Error: ', err);
+    res.sendStatus(404);
+  }
 });
 
 module.exports = router;
