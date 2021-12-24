@@ -1,24 +1,27 @@
 import styled from 'styled-components';
 
 const StyledNavBar = styled.header`
-  // border: 1px solid black;
-  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  padding: 15px;
 
-  h1 {
-    font-size: 35px;
-    padding-left: 15px;
-    cursor: pointer;
+  .logo-container {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 35px;
+      padding-left: 15px;
+      cursor: pointer;
+    }
+
+    img {
+      cursor: pointer;
+    }
   }
 
-  img {
-    cursor: pointer;
-  }
-
-  div {
+  .btn-container {
     display: flex;
     align-items: center;
 

@@ -1,30 +1,36 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import StyledNavBar from './Navbar.styled';
 import Button from '../reusable-styles/Button.styled';
 
-const Navbar = ({ user, setForm, setUser }) => {
-  const handleLogout = () => {
-    setUser(null);
-    setForm(null);
-  };
+const Navbar = () => {
+  const user = null;
 
   return (
     <StyledNavBar>
-      <div onClick={() => setForm(null)}>
+      <NavLink to="/" className="logo-container">
         <img height="100" alt="happy sun icon" src="../images/sun.png" />
         <h1>positive.ly</h1>
-      </div>
+      </NavLink>
+
       <div className="btn-container">
         {
-          user === undefined
+          user === null
             ? (
               <>
-                <Button onClick={() => setForm('login')} border="white" color="white">LOG IN</Button>
-                <Button onClick={() => setForm('signup')}>SIGN UP</Button>
+                <NavLink to="login">
+                  <Button border="white" color="white">LOG IN</Button>
+                </NavLink>
+                <NavLink to="signup">
+                  <Button>SIGN UP</Button>
+                </NavLink>
               </>
             )
             : (
-              <Button onClick={handleLogout} color="white">LOG OUT</Button>
+              <NavLink to="/">
+                {/* need to add logic to sign out */}
+                <Button color="white">LOG OUT</Button>
+              </NavLink>
             )
         }
       </div>

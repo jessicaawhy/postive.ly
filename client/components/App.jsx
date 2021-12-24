@@ -17,17 +17,17 @@ import UserPage from './UserPage/UserPage';
 const App = () => (
   <>
     <GlobalStyle />
-    <Navbar />
-    <StyledMain>
-      <Router>
+    <Router>
+      <Navbar />
+      <StyledMain>
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/signup" element={<AuthSignupForm />} />
           <Route path="/login" element={<AuthLoginForm />} />
           <Route path="/home" element={<UserPage />} />
         </Routes>
-      </Router>
-    </StyledMain>
+      </StyledMain>
+    </Router>
   </>
 );
 
