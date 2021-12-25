@@ -16,8 +16,6 @@ const AuthLoginForm = () => {
     const result = await fetch(`/api/user/${username.value}`);
     const data = await result.json();
 
-    console.log(data);
-
     updateUser(data);
   };
 

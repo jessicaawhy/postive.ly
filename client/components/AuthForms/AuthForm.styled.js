@@ -36,7 +36,6 @@ const StyledForm = styled.form`
       margin-right: 5px;
     }
   }
-
 `;
 
 export default StyledForm;

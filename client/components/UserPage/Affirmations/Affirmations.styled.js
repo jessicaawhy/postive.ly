@@ -25,7 +25,6 @@ const StyledContainer = styled.div`
   }
 
   p {
-
     line-height: 1.5;
     width: 85%;
   }
