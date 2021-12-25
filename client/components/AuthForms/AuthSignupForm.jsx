@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../UserContext';
 import StyledForm from './AuthForm.styled';
 import Button from '../reusable-styles/Button.styled';
 
-const AuthSignupForm = ({ setForm }) => {
+const AuthSignupForm = () => {
+  const loggedIn = useUser() !== null;
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setForm(null);
   };
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate('/home');
+    }
+  }, [loggedIn]);
 
   return (
     <StyledForm onSubmit={handleSubmit} autoComplete="off">
@@ -19,10 +29,10 @@ const AuthSignupForm = ({ setForm }) => {
       <label htmlFor="password">
         Password
         <br />
-        <input type="text" id="password" type="password" />
+        <input type="password" id="password" />
       </label>
       <div className="btn-container">
-        <Button onClick={() => setForm(null)} color="white">CANCEL</Button>
+        <Button onClick={() => navigate('/')} color="white">CANCEL</Button>
         <Button>SUBMIT</Button>
       </div>
     </StyledForm>

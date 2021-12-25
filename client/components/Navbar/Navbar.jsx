@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useUser, useUserUpdate } from '../UserContext';
 import StyledNavBar from './Navbar.styled';
 import Button from '../reusable-styles/Button.styled';
 
 const Navbar = () => {
-  const user = null;
+  const loggedIn = useUser() !== null;
+  const updateUser = useUserUpdate();
 
   return (
     <StyledNavBar>
@@ -15,8 +17,13 @@ const Navbar = () => {
 
       <div className="btn-container">
         {
-          user === null
+          loggedIn
             ? (
+              <NavLink to="/">
+                <Button color="white" onClick={() => updateUser(null)}>LOG OUT</Button>
+              </NavLink>
+            )
+            : (
               <>
                 <NavLink to="login">
                   <Button border="white" color="white">LOG IN</Button>
@@ -25,12 +32,6 @@ const Navbar = () => {
                   <Button>SIGN UP</Button>
                 </NavLink>
               </>
-            )
-            : (
-              <NavLink to="/">
-                {/* need to add logic to sign out */}
-                <Button color="white">LOG OUT</Button>
-              </NavLink>
             )
         }
       </div>
