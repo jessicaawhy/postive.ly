@@ -6,10 +6,19 @@ import Button from '../reusable-styles/Button.styled';
 
 const AuthLoginForm = () => {
   const loggedIn = useUser() !== null;
+  const updateUser = useUserUpdate();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const { username, password } = e.target;
+    const result = await fetch(`/api/user/${username.value}`);
+    const data = await result.json();
+
+    console.log(data);
+
+    updateUser(data);
   };
 
   useEffect(() => {

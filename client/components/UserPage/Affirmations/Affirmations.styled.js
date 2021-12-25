@@ -7,6 +7,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  height: 25%;
   min-width: 400px;
   margin: 20px;
   padding: 20px;

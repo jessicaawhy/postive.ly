@@ -6,11 +6,10 @@ const StyledUserPage = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  flex-grow: 1;
-  margin-bottom: 40px;
+  padding: 30px;
 
   h2 {
-    margin: 30px;
+    margin: 15px;
     font-size: 30px;
   }
 `;

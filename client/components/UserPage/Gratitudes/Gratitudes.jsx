@@ -3,10 +3,10 @@ import StyledContainer from './Gratitudes.styled';
 import Button from '../../reusable-styles/Button.styled';
 import List from '../List/List';
 
-const Gratitudes = () => (
+const Gratitudes = ({ gratitudes }) => (
   <StyledContainer>
     <h3>Gratitudes</h3>
-    <List />
+    <List gratitudes={gratitudes} />
     <div className="btn-container">
       <Button>Add New Gratitude</Button>
       <Button>
