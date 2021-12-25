@@ -1,11 +1,12 @@
 import React from 'react';
 import StyledForm from './GratForm.styled';
-import Button from '../reusable-styles/Button.styled';
+import Button from '../../reusable-styles/Button.styled';
 
-const GratShareForm = ({ setForm }) => {
+const GratShareForm = ({ setModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    setForm(null);
+    // todo: add sharing feature
+    setModal(null);
   };
 
   return (
@@ -22,7 +23,7 @@ const GratShareForm = ({ setForm }) => {
         <input type="text" id="gratitude" />
       </label>
       <div className="btn-container">
-        <Button onClick={() => setForm(null)} color="white">CANCEL</Button>
+        <Button onClick={() => setModal(null)} color="white">CANCEL</Button>
         <Button type="submit">SUBMIT</Button>
       </div>
     </StyledForm>

@@ -1,14 +1,12 @@
 import React from 'react';
 import StyledForm from './GratForm.styled';
-import Button from '../reusable-styles/Button.styled';
+import Button from '../../reusable-styles/Button.styled';
 
-const NewForm = ({ gratitudes, setGratitudes, setForm }) => {
+const NewForm = ({ setModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setGratitudes([e.target.gratitude.value, ...gratitudes]);
-
-    setForm(null);
+    // todo: handle submit to server
+    setModal(null);
   };
 
   return (
@@ -20,7 +18,7 @@ const NewForm = ({ gratitudes, setGratitudes, setForm }) => {
         <input type="text" id="gratitude" />
       </label>
       <div className="btn-container">
-        <Button onClick={() => setForm(null)} color="white">CANCEL</Button>
+        <Button onClick={() => setModal(null)} color="white">CANCEL</Button>
         <Button type="submit">SUBMIT</Button>
       </div>
     </StyledForm>
