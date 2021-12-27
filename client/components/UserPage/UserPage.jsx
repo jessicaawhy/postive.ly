@@ -37,7 +37,7 @@ const UserPage = () => {
               <>
                 <h2>Hello, {user.username}!</h2>
                 <Affirmations affirmation={user.affirmation} />
-                <Gratitudes gratitudes={user.gratitudes} setModal={setModal} />
+                <Gratitudes setModal={setModal} />
               </>
             )
             : <FormModal />
