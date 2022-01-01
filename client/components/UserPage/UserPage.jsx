@@ -36,7 +36,7 @@ const UserPage = () => {
             ? (
               <>
                 <h2>Hello, {user.username}!</h2>
-                <Affirmations affirmation={user.affirmation} />
+                <Affirmations />
                 <Gratitudes setModal={setModal} />
               </>
             )

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useUser, useUserUpdate } from '../../UserContext';
 import StyledContainer from './Affirmations.styled';
 
-const Affirmations = ({ affirmation }) => {
+const Affirmations = ({ }) => {
+  const user = useUser();
+  const updateUser = useUserUpdate();
   const [saved, setSaved] = useState(true);
-  const [text, setText] = useState(affirmation);
+  const [text, setText] = useState(user.affirmation);
 
   const handleClick = () => {
     setSaved(false);
@@ -25,6 +28,7 @@ const Affirmations = ({ affirmation }) => {
         body: JSON.stringify({ affirmation: text }),
       });
 
+      updateUser({ ...user, affirmation: text });
       setSaved(true);
     } catch (err) {
       if (err.message === 'empty') {
@@ -42,7 +46,11 @@ const Affirmations = ({ affirmation }) => {
       <h3>Affirmations</h3>
       {
         saved === true
-          ? <p onClick={handleClick} id="affirmation">{text}</p>
+          ? (
+            <div className="container">
+              <p onClick={handleClick} id="affirmation">{text}</p>
+            </div>
+          )
           : (
             <textarea
               id="input"
