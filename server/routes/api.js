@@ -39,10 +39,10 @@ router.post('/user', async (req, res) => {
     user.gratitudes.push('Rewire your mind - think positive.ly');
 
     await user.save();
-    res.send(201);
+    res.sendStatus(201);
   } catch (err) {
     console.log('Error: ', err);
-    res.sendStatus(422);
+    res.sendStatus(404);
   }
 });
 
@@ -59,7 +59,7 @@ router.post('/user/:username/gratitudes', async (req, res) => {
     user.gratitudes.push(gratitude);
 
     await user.save();
-    res.send(201);
+    res.sendStatus(201);
   } catch (err) {
     console.log('Error: ', err);
     res.sendStatus(404);
@@ -78,7 +78,7 @@ router.delete('/user/:username/gratitudes/:id', async (req, res) => {
     user.gratitudes.splice(id, 1);
 
     await user.save();
-    res.send(200);
+    res.sendStatus(200);
   } catch (err) {
     console.log('Error: ', err);
     res.sendStatus(404);
@@ -98,7 +98,7 @@ router.put('/user/:username/affirmation', async (req, res) => {
     user.affirmation = affirmation || 'Repeating positive affirmations will give power to the phrase, since hearing something often makes it more likely you\'ll believe it. Alter your subconcious thoughts and add an affirmation!';
 
     await user.save();
-    res.send(204);
+    res.sendStatus(204);
   } catch (err) {
     console.log('Error: ', err);
     res.sendStatus(404);

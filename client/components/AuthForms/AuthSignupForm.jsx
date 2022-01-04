@@ -8,8 +8,29 @@ const AuthSignupForm = () => {
   const loggedIn = useUser() !== null;
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const { username, password } = e.target;
+
+      const response = await fetch('/api/user/', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({ username: username.value }),
+      });
+
+      if (!response.ok) {
+        throw new Error('User already exists!');
+      }
+
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+      alert(err.message);
+    }
   };
 
   useEffect(() => {
@@ -33,7 +54,7 @@ const AuthSignupForm = () => {
       </label>
       <div className="btn-container">
         <Button onClick={() => navigate('/')} color="white">CANCEL</Button>
-        <Button>SUBMIT</Button>
+        <Button type="submit">SUBMIT</Button>
       </div>
     </StyledForm>
   );

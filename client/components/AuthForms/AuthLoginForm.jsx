@@ -12,11 +12,21 @@ const AuthLoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { username, password } = e.target;
-    const result = await fetch(`/api/user/${username.value}`);
-    const data = await result.json();
+    try {
+      const { username, password } = e.target;
+      const response = await fetch(`/api/user/${username.value}`);
 
-    updateUser(data);
+      if (!response.ok) {
+        throw new Error('No such user!');
+      }
+
+      const data = await response.json();
+
+      updateUser(data);
+    } catch (err) {
+      console.log(err);
+      alert(err.message);
+    }
   };
 
   useEffect(() => {
@@ -36,7 +46,7 @@ const AuthLoginForm = () => {
       <label htmlFor="password">
         Password
         <br />
-        <input type="text" id="password" />
+        <input type="password" id="password" />
       </label>
       <div className="btn-container">
         <Button onClick={() => navigate('/')} color="white">CANCEL</Button>
